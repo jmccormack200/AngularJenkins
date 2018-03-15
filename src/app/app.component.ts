@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { BROKEN } from '@angular/doesnt-exist';
 
 @Component({
   selector: 'app-root',
