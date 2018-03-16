@@ -7,9 +7,10 @@ module.exports = function (config) {
     frameworks: ['jasmine', '@angular/cli'],
     plugins: [
       require('karma-jasmine'),
-      require('karma-chrome-launcher'),
       require('karma-jasmine-html-reporter'),
+      require('karma-firefox-launcher'),
       require('karma-coverage-istanbul-reporter'),
+      require('karma-junit-reporter'),
       require('@angular/cli/plugins/karma')
     ],
     client:{
@@ -22,12 +23,21 @@ module.exports = function (config) {
     angularCli: {
       environment: 'dev'
     },
-    reporters: ['progress', 'kjhtml'],
+    reporters: ['dots','junit'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
-    singleRun: false
+    browsers: ['FirefoxHeadless'],
+    customLaunchers: {
+      FirefoxHeadless: {
+        base: 'Firefox',
+        flags: [ '-headless' ],
+      },
+    },
+    singleRun: true,
+    junitReporter: {
+      outputFile: 'test-results.xml'
+    }
   });
 };
