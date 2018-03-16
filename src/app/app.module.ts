@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 asdfasdf
+adf
 
 import { AppComponent } from './app.component';
 
