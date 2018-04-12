@@ -10,6 +10,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "postinstall": "ng build --aot -prod",
+    "start": "node server.js",
     "format": "prettier --single-quote --trailing-comma es5 --write \"{src/app,__{tests,mocks}__}/**/*.ts\""
   },
   "private": true,
